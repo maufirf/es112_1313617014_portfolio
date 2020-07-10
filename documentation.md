@@ -324,7 +324,7 @@ There is only one class made here in `stringer.py`:
 |`raw_templates`:`list<list[str,int,int]>`<br/>`formats`:`list<str>`<br/>`weights`:`list<int>`<br/>`vars`:`list<int>`<br/>`custom_words`:`list<str>`|
 |`__init__`():`Stringer_Ctrl`<br/>`pick_pattern`():`str`,`int`<br/>`generate`(`base`:`tuple(str,int)`):`str`<br/>`authenticate`():`None`|
 
-while the rest are functional programming. The `bot.py` is similar like before, just top level scripts.
+while the rest are functional programming, which also has only one function. The `bot.py` is similar like before, just top level scripts.
 
 - `gdrive_helper.py`
     |Function|Parameter|Return|Description|
@@ -349,23 +349,214 @@ Total from 8 files: 147 lines written
 ## KRSBot5000
 
 ### Motives & Background
+
+_Taken from [README.m](README.md):_
+> This bot was made as inside joke originated from [BEM Shitposting Indonesia (BEMSHI)](https://web.facebook.com/bemshitposting/) community, which consisted of people that revolves around Facebook pages of each universities' shitposting representatives. Prior to the deployment date, this bot has no affiliation with previously said group, BAS.
+
 ### Project Duration
+
+_Taken from [README.m](README.md):_
+> The development of this bot starts around November 26th, 2018. It is working on the offline part, but not yet ready to be used for online purposes to that date. Instead, It's deployed on May 25th, 2019. To this day, I'm aware this bot is used on at least three Discord servers.
+
 ### Source code structure
+
+```
+github.com/parampaa2/krsbot5000.git
+│   .gitignore
+│   bot.py
+│   commands.json
+│   core.py
+│   courses.json
+│   debug.py
+│   LICENSE
+│   Procfile
+│   README.md
+│   regextest.py
+│   requirements.txt
+│
+└───framework
+        card.py
+        dbprocess.py
+        instance.py
+        meta_attrib.py
+        __init__.py
+```
+
+Not much code folder aggregation, I only made a framework folder that contains all the utility i need in order to create a KRS.
+
 ### Class and Function diagram
+
+KRSBot5000 starts on the launch of `bot.py`. As simple as
+```bash
+$ python bot.py
+```
+There are few classes, most of them clustered on the `framework/` folder, but some of them are also on the `core.py`.
+
+![KRSBot5000 framework utility class diagram](assets/krsbot5000/classdiagram.svg)
+
+_<sup>KRSBot5000 framework utility class diagram</sup>_
+
+|**`Core_C(enum.Enum)`**|
+|-|
+|`GENERAL_CREDITS`:`list<int>`<br/>`SPARSE_MULTIPLER`:`list<int>`<br/>`GREED`:`tuple(str,int)`<br/>`NORMAL`:`tuple(str,int)`<br/>`SPARSE`:`tuple(str,int)`|
+||
+
+|**`Core`**|
+|-|
+|`dbproc`:`DBProcess`<br/>`wrap_instance`:`list<University>`,`list<Faculty>`,`list<Major>`,`list<Course>`|
+|`__init__`(`json_path`:`str`=`courses.json`):`Core`<br/>`get_course_list_by_sem_credits`(`sem_credits`:`int`,`slot_behave`:`Core_C`=`Core_C.NORMAL`):`list<Course>`<br/>`get_random_study_plan`(`sem_credits`:`int`=`1`,`university`:`University`=`None`,`faculty`:`Faculty`=`None`,`major`:`Major`=`None`,`semester`:`int`=`None`,`random_type`:`int`=`0`)|
+
+While the rest of them are functional programming. Although this bot is an active responding bot that can response in real time. Therefore, this bot is active 24/7 (unlike other bots that only online at least 24 seconds per day) and needs proper asynchronous functions to respond with. `Discord.py` library has provided the override-able async functions.
+
+- `bot.py`
+    |Function|Parameter|Return|Description|
+    |-|-|-|-|
+    |`@discord.Client.event async on_ready`|_none_|`None`|Asynchronous server protocol to response the bot being online after a reply from the Discord API.|
+    |`@discord.Client.event async on_message`|`message`:`discord.Message`|`None`|Asynchronous server protocol to response to webhook message packets which the bot has the privilege/permission to read.|
+    |`@discord.Client.event async on_ready`|`channel`:`discord.abc.Messageable`<br/>`user`:Union[`discord.User`,`discord.Member`]<br/>`when`:`datetime.datetime`|`None`|Asynchronous server protocol to response typing users on channels which the bot has the privilege/permission to read|
+
 ### Statistics
+
+```
+github.com/parampaa2/krsbot5000.git
+│   .gitignore            3
+│   bot.py              185
+│   commands.json        29
+│   core.py             120
+│   courses.json        460
+│   debug.py              7
+│   LICENSE               0 (21 written by MIT)
+│   Procfile              1
+│   README.md           107 (3876 characters)
+│   regextest.py         21
+│   requirements.txt      2
+│
+└───framework
+        card.py          63
+        dbprocess.py    136
+        instance.py     172
+        meta_attrib.py  111
+        __init__.py       0
+```
+
+Total from 16 files: 1417 lines written
 
 ## Twitterfessbot
 
 ### Motives & Background
+
+_Taken from [README.md](README.md):_
+>Twitterfessbot, or TFB for short, is a [Facebook bot](https://fb.me/twitterfessbot) that posts random tweets from randomly selected anonymous confession accounts that is generally localized to Indonesian region. Born May 12th, 2020, amidst the COVID-19 pandemic in a ominous chat group. The bot was a mere joke to the "bot idea" meme which flourishes on [The Bot Appreciation Society](https://web.facebook.com/groups/botappreciationsociety), and also a satire to those fess accounts. This bot is under the supervision of [Bottlemin](https://maufirf.me/Bottlemin-Bots).
+
 ### Project Duration
+
+The development until its first deployment only took less than a day, likely to be around an hour.
+
 ### Source code structure
+
+***THE REPOSITORY IS PRIVATE, SOME OF THE CONTENTS MAY BE OMMITTED***
+
+Detailed information regarding the structure is currently classified. It will be open source soon after it is ready. I want to make the bot as one of the good, clean, simple example of the bot tutorial implementation.
+
 ### Class and Function diagram
+
+Ditto.
+
 ### Statistics
+
+Total 208 lines written. Detailed information has been ommitted.
 
 ## Bot Tutorial (Indonesia)
 
 ### Motives & Background
+
+_Taken from [README.md](README.md):_
+> The background of this project was the lack of clear and thorough tutorials of the subject in the internet. In the contrast, there is a whole lot more than just sufficient amount of resources and helping communities in english. There are some tutorials too, but most of them involves using ready-to-use GUI web-based API and no programming needed. I'm not targeting just for the people to be able to make bots, I am aiming to give them a full freedom (and responsibilities) in developing their own bot.
+>
+> In fact, one of the the bot i made that I will explain after this uses the boilerplate code i made for this tutorial as a proof of concept. It has only a few lines of codes, which I hope will less discouraging the readers, and instead motivates them to make one because it is not that hard. It is hard, of course, but it's not like people are going to die making this harmless bots.
+
 ### Project Duration
+
+_Taken from [README.md](README.md):_
+> This project took awhile, I started writing for two days and then i paused when reaching the checkpoint. I am still continuing to writing it, but I need a computer replacement first, because I'm not doing it again in internet cafe amidst the pandemic.
+
 ### Source code structure
+
+Most of the repositories only consist of documentations, which is full of tutorial. Initially, I wanted to use Github wiki, but I wanted to use github pages, so yeah, i passed that decision.
+
+People who uses this tutorial can start cloning the repository and go to `projects/` folder and choose the project they wish to start. There's only one available for now, though, which is `example/`.
+
+On `example/` project, users can simply launch a bot by either choosing their preferred launch scripts:
+```bash
+$ python bot_discord.py
+```
+```bash
+$ python bot_facebook.py
+```
+```bash
+$ python bot_twitter.py
+```
+
+The repository is not private, but visiting the repository in normal ways is not intentional. Users are encouraged to only open the repository when they reached a checkpoint in tutorial, in which the link is available.
+```
+...
+│   .gitignore
+│   LICENSE
+│   README.md
+│   _config.yml
+│
+├───assets
+│   └───img
+│           ... 25 .png images ommitted
+│
+└───projects
+    └───example
+            .env
+            .gitignore
+            bot_discord.py
+            bot_facebook.py
+            bot_twitter.py
+            key_loader.py
+            requirements.txt
+```
+
 ### Class and Function diagram
+
+Enums from `key_loader.py`:
+
+|**`GENERAL_ACCESS_TOKEN(enum.Enum)`**|
+|-|
+|`DISCORD`:`str`<br/>`TWITTER`:`str`<br/>`FACEBOOK`:`str`|
+||
+
+|**`TWITTER_KEYS(enum.Enum)`**|
+|-|
+|`API_KEY`:`str`<br/>`API_SECRET`:`str`<br/>`ACCESS_TOKEN`:`str`<br/>`ACCESS_TOKEN_SECRET`:`str`|
+
+The rest is functional programming. `bot_facebook.py` and `bot_twitter` is a top level script, while `bot_discord.py` is similar like usual discord bots that uses asynchronous functions:
+
+- `bot.py`
+    |Function|Parameter|Return|Description|
+    |-|-|-|-|
+    |`@discord.Client.event async on_ready`|_none_|`None`|Asynchronous server protocol to response the bot being online after a reply from the Discord API.|
+    |`@discord.Client.event async on_message`|`message`:`discord.Message`|`None`|Asynchronous server protocol to response to webhook message packets which the bot has the privilege/permission to read.|
+
 ### Statistics
+
+```
+...
+│   .gitignore                    3
+│   README.md                   494 (44829 characters)
+│  
+└───projects
+    └───example
+            .env                  8
+            .gitignore            5
+            bot_discord.py       25
+            bot_facebook.py      10
+            bot_twitter.py       10
+            key_loader.py        16
+            requirements.txt      5
+```
+
+Total from 9 files: 576 lines written

@@ -17,7 +17,7 @@ AufiRayesa_ilkom17@mahasiswa.unj.ac.id (academic)
 
 I have a few many projects for the last 6 months back, however, some of them are mostly private and/or not hosted at github, in which I cannot allow any third parties to observe at it. All the code written on my github were originally written by me or said otherwise. When I took reference from other sites (i.e StackOverflow), I usually put comments on the code. I can't really document them because I wrote too much lines. The dependencies are mostly written by the third parites (i.e NumPy, Discord.py) unless stated otherwise. Almost none of them have proper license yet because the platforms I'm deploying does not require that necessarily and Indonesian goverment has no regulation on that yet. I don't have a privacy policy yet regarding data collection from the users for some of my projects, but most of them came from Google Forms which require them to log in and consent to send data under Google's privacy policy, at least to this date.
 
-This repository is private - for registered eyes only.
+This repository does not include the source code as the source codes are already put in their own repository and re-cloning it is futile.
 
 ---------------
 ---------------
@@ -236,7 +236,7 @@ This early developed tutorial has been used by some people, including one of our
 
 _<sup>Twitterfessbot sample post</sup>_
 
-_Copied from [github.com/parampaa2/twitterfessbot](https://github.com/parampaa2/twitterfessbot):_
+_Copied from Twitterfessbot `README.md`:_
 
 > # Twitterfessbot42069
 >
@@ -316,7 +316,7 @@ Our group is as big as 4 people, including myself as tutor. However, only one of
 
 The students who joined this group decided to hit me up to catch up whatever the said lecturer brings up unprofessionally. The goal of this group was to make sure all the students in the group able to fill the gap left by the lecturer and comprehend the subject material.
 
-We decided the tutor will take every tuesday evening as that is the only time when our off-campus time ovelaps. Initially, we used GDS515 lab to do this, but furthermore we did it outside the class. We have no strict procedures, we basically just gather up, starting by me asking what materials that were not understood well from recent classes, and start to teach. 
+We decided the tutor will take   every tuesday evening as that is the only time when our off-campus time ovelaps. Initially, we used GDS515 lab to do this, but furthermore we did it outside the class. We have no strict procedures, we basically just gather up, starting by me asking what materials that were not understood well from recent classes, and start to teach. 
 
 I have to admit I have given up not just Ilmu Komputer UNJ, I'm already given up my college life, and this tutor group made me postponed that urge to cease my effort in this university.
 
@@ -333,4 +333,4 @@ I had to point out things based on my experience with this tutoring programme:
 - We are **lack of proper lecturers or proper subject assignment**, and has no transparency of this problem out to the civitas of Ilkom UNJ. I don't mean to tamper with the lecturers' stuff but this thing is getting out of hand and affecting the students life.
 - **Our subject material is too outdated**, some even dated back to 2006. There is mostly no novelty in our materials. Some of the courses, like yours, has a brilliant novelty value and temporal relevance though I had to admit sometimes it's just off limits or subject-irrelevant, but I have to appreciate that. I really wish you can bring this up to other lecturers, because new things are one of the things that made a course interesting.
 
-<sub>Fun fact: I have written at least 35,178 characters to this markdown file.</sub>
+<sub>Fun fact: I have written at least 35,207 characters to this markdown file.</sub>
